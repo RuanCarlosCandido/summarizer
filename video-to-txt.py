@@ -104,10 +104,9 @@ def save_transcription(transcriptions, output_file='transcription.txt', error_fi
         logging.info(f"Erros salvos em {error_file}")
 
 def main():
-    video_path = '/home/ruan/Videos/t1.mkv'
+    video_path = 'v4.mp4'
     transcriptions = asyncio.run(transcribe_video(video_path))
     save_transcription(transcriptions)
 
 if __name__ == "__main__":
     main()
-

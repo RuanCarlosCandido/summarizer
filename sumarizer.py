@@ -46,7 +46,7 @@ def summarize_file(file_path):
     return combined_summary
 
 # Caminho para o arquivo que você deseja resumir
-file_path = 'input.txt'
+file_path = 'transcription.txt'
 summary = summarize_file(file_path)
 
 # Salvar o resumo em um novo arquivo
