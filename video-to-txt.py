@@ -68,10 +68,8 @@ async def transcribe_audio(audio_paths):
             task = loop.run_in_executor(executor, transcribe_segment, audio_path)
             transcribe_tasks.append(task)
 
-        results = []
-        for task in tqdm(asyncio.as_completed(transcribe_tasks), total=len(transcribe_tasks), desc="Transcrevendo"):
-            result = await task
-            results.append(result)
+        # Use gather to maintain order
+        results = await asyncio.gather(*transcribe_tasks)
 
     return results
 
